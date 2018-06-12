@@ -1,0 +1,43 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+
+public class Interface extends Application{
+	
+	static boolean play = true;
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		// TODO Auto-generated method stub
+		Button btnPlayer = new Button("播放");
+		btnPlayer.setOnAction(event->{
+			if(play) {
+				btnPlayer.setText("暂停");
+				play = false;
+			}else {
+				btnPlayer.setText("播放");
+				play = true;
+			}
+		});
+		Button btnNext = new Button("下一首");
+
+		
+		BorderPane pane = new BorderPane();
+		
+		pane.setCenter(btnPlayer);
+		
+		pane.setBottom(btnNext);
+		
+		Scene scene = new Scene(pane,500,500);
+		
+		primaryStage.setScene(scene);
+		primaryStage.setTitle("Rain Player");
+		primaryStage.show();
+	}
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
+	
+}

@@ -1,0 +1,26 @@
+import javax.swing.*;
+
+
+public class Interface {
+	
+	private static void createAndshowGUI() {
+		JFrame.setDefaultLookAndFeelDecorated(true);
+		JFrame frame = new JFrame("RainPlayer");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JLabel label= new JLabel("Hellow World");
+		frame.getContentPane().add(label);
+		
+		frame.pack();
+		frame.setVisible(true);
+	}
+	
+	public static void main(String[] args) {
+		javax.swing.SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				createAndshowGUI();
+			}
+		});
+	}
+
+}

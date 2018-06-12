@@ -1,0 +1,48 @@
+import javax.swing.*;
+
+
+public class Interface {
+	
+	private static void createAndshowGUI() {
+		//set the theme
+		JFrame.setDefaultLookAndFeelDecorated(true);
+		// set the title
+		JFrame frame = new JFrame("RainPlayer");
+		//set the size
+		frame.setSize(350,200);
+		// set the close operation
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		// create a panel, the panel is just like div in the HTML
+		JPanel panel = new JPanel();
+		frame.add(panel);
+		
+		// add things to panel
+		placeComponets(panel);
+		
+		
+		frame.pack();
+		frame.setVisible(true);
+	}
+	
+	private static void placeComponets(JPanel panel) {
+		panel.setLayout(null);
+		JButton playButton = new JButton("播放/暂停");
+		playButton.setBounds(10, 50, 200, 25);
+		panel.add(playButton);
+		
+		JButton nextButton = new JButton("下一首");
+		nextButton.setBounds(220, 50, 80, 25);
+		panel.add(nextButton);
+	}
+	
+	
+	public static void main(String[] args) {
+		javax.swing.SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				createAndshowGUI();
+			}
+		});
+	}
+
+}
